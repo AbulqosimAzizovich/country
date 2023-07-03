@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;500;600;700;800;900;1000&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+/* .wrapper {
+  display: flex;
+  flex-wrap: wrap;
+} */
+
+#brand {
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0px 2px 9px 1px rgba(0, 0, 0, 0.1);
+}
+
+#checkbox {
+  display: none;
+}
+
+.toggler {
+  display: block;
+  width: 60px;
+  height: 31px;
+  border: 2px solid #4672fe;
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
+}
+
+.ball,
+.sun,
+.moon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.ball {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-color: #4672fe;
+  border-radius: 50%;
+  left: 1px;
+  z-index: 10;
+  transition: all 0.5s ease-in-out;
+}
+
+.sun {
+  left: 5px;
+}
+
+.moon {
+  right: 5px;
+}
+
+#checkbox:checked + .ball {
+  transform: translate(29px, -50%);
+}
