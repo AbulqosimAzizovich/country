@@ -43,7 +43,7 @@ function render(data) {
     res += `
             <div class="mx-auto w-[264px] h-[336px] bg-white border border-gray-200 rounded-lg shadow dark:bg-[#2B3844] dark:border-gray-700">
                 <a href="#">
-                    <img class="rounded-t-lg" src="${value.flags.svg}" alt="${value.name}" />
+                    <img class="rounded-t-lg w-full h-[160px]" src="${value.flags.svg}" alt="${value.name}" />
                 </a>
                 <div class="p-5">
                     <a href="#">
