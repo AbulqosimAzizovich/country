@@ -35,20 +35,6 @@ let count = 0;
 
 dark.addEventListener("input", (e) => {
   document.documentElement.classList.toggle("dark");
-
-  // count += 1
-  // console.log(count);
-  // if (count % 2 == 1){
-  //     bod.style.color = "#fff"
-  //     bod.style.backgroundColor = "#202C36";
-  //     navbar.style.backgroundColor = "#2B3844";
-  //     bod.style.transition = "0.2s";
-  //     navbar.style.transition = "0.2s";
-  // }else{
-  //     bod.style.backgroundColor = "white";
-  //     navbar.style.backgroundColor = "#fff";
-  //     bod.style.color = "#111517";
-  // }
 });
 
 function render(data) {

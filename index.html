@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- build css -->
+    <link rel="stylesheet" href="./dist/output.css" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <title>Countrys</title>
+  </head>
+  <body class="dark:bg-[#202C36]">
+    <header class="shadow-md">
+      <nav class="bg-white border-gray-200 dark:bg-[#2B3844]" id="navbar">
+        <div
+          class="flex flex-wrap items-center h-[80px] mb-12 justify-between mx-auto container p-4"
+        >
+          <a href="https://flowbite.com/" class="flex items-center">
+            <span
+              class="self-center text-2xl font-extrabold whitespace-nowrap dark:text-white"
+              >Where in the world?</span
+            >
+          </a>
+          <button
+            data-collapse-toggle="navbar-default"
+            type="button"
+            class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            aria-controls="navbar-default"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-6 h-6"
+              aria-hidden="true"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+          <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+            <ul class="flex items-center gap-[8px]">
+              <label for="checkbox" class="toggler" id="dark">
+                <input type="checkbox" id="checkbox" />
+                <span class="ball"></span>
+                <i class="bx bx-sun text-[16px] dark:text-[white] sun"></i>
+                <i class="bx bx-moon text-[16px] dark:text-[white] moon"></i>
+              </label>
+
+              <li class="text-[16px] font-semibold dark:text-[white]">
+                Dark Mode
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <div class="container mx-auto flex justify-between">
+          <form class="w-[480px] h-[56px]">
+            <label
+              for="default-search"
+              class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+              >Search</label
+            >
+            <div class="relative">
+              <div
+                class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="w-5 h-5 text-gray-500 dark:text-gray-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  ></path>
+                </svg>
+              </div>
+              <input
+                type="search"
+                id="default-search"
+                class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Search for a country…"
+                required
+              />
+            </div>
+          </form>
+          <select
+            id="region"
+            class="h-[56px] w[200px] py-[18px] px-[24px] dark:bg-[#2B3844] dark:text-[white]"
+          >
+            <option disabled selected>Filter by Region</option>
+          </select>
+        </div>
+      </section>
+
+      <section>
+        <div class="container mx-auto">
+          <div
+            class="wrapper gap-[74px] grid grid-cols-4 mt-[33px]"
+            id="wrapper"
+          ></div>
+        </div>
+      </section>
+    </main>
+  </body>
+  <script src="./country.js"></script>
+  <script src="./data.js"></script>
+</html>
