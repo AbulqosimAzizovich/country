@@ -61,7 +61,7 @@ wrapper1.addEventListener("click", (e) => {
     let alpha3Code =
       e.target.parentElement.parentElement.getAttribute("data-code");
     window.localStorage.setItem("code", alpha3Code);
-    window.location.href = "http://127.0.0.1:5501/Countrys/details.html";
+    window.location.href = "http://127.0.0.1:5501/details.html";
   }
 });
 
