@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./src/style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="shadow-md">
+      <nav class="bg-white border-gray-200 dark:bg-[#2B3844]" id="navbar">
+        <div
+          class="flex flex-wrap items-center h-[80px] mb-12 justify-between mx-auto container p-4"
+        >
+          <a href="./index.html" class="flex items-center">
+            <span
+              class="self-center text-2xl font-extrabold whitespace-nowrap dark:text-white"
+              >Where in the world?</span
+            >
+          </a>
+          <button
+            data-collapse-toggle="navbar-default"
+            type="button"
+            class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            aria-controls="navbar-default"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-6 h-6"
+              aria-hidden="true"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+          <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+            <ul class="flex items-center gap-[8px]">
+              <label for="checkbox" class="toggler" id="dark1">
+                <input type="checkbox" id="checkbox" />
+                <span class="ball"></span>
+                <i class="bx bx-sun text-[16px] dark:text-[white] sun"></i>
+                <i class="bx bx-moon text-[16px] dark:text-[white] moon"></i>
+              </label>
+
+              <li class="text-[16px] font-semibold dark:text-[white]">
+                Dark Mode
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="mt-[80px]">
+      <section id="root"></section>
+    </main>
+  </body>
+  <script src="./country.js"></script>
+
+  <script>
+    const rootDiv = document.getElementById("root");
+    let [singleCountry] = davlatlar.filter(
+      (e) => e.alpha3Code === localStorage.getItem("code")
+    );
+    let f = 0;
+
+    rootDiv.innerHTML = `
+        <div class="container mx-auto">
+  <div class="flex items-center gap-[10px] cursor-pointer mb-[80px]" href="./index.html">
+    <i class="bx bx-left-arrow-alt text-[25px]"></i>
+    <p class="font-light text-[16px]">Back</p>
+  </div>
+
+  <div class="flex items-center gap-[121px]">
+    <img
+      class="w-[559px] h-[483px]"
+      src="${singleCountry.flags.svg}"
+      alt="${singleCountry.name}"
+    />
+
+      <div class="">
+        <h1 class="font-extrabold text-[32px] mb-[23px]">
+          ${singleCountry.name}
+        </h1>
+        <div class="flex items-start gap-[141px]">
+          <ul>
+            <li><strong>Native name:</strong> ${singleCountry.nativeName}</li>
+            <li><strong>Population:</strong> ${singleCountry.population}</li>
+            <li><strong>Region:</strong> ${singleCountry.region}</li>
+            <li><strong>Sub Region:</strong> ${singleCountry.subregion}</li>
+            <li><strong>Capital:</strong> ${singleCountry.capital}</li>
+          </ul>
+        
+          <ul>
+            <li>
+              <strong>Top level domain:</strong> ${singleCountry.topLevelDomain}
+            </li>
+            <li>
+              <strong>Currencies:</strong> ${singleCountry.currencies[0].name}
+            </li>
+            <li>
+              <strong>Languages:</strong> ${singleCountry.languages.map((e) => {
+                return e.name;
+              })}
+            </li>
+          </ul>
+        </div>
+
+        <div class="flex mt-[70px] gap-4">
+            <h2 class="font-bold ">Border Countries:</h2>
+            <div id="borders" class="w-[96px] h-[28px] shadow-xl rounded-[2px]">
+              ${singleCountry.borders.map((v) => {
+                `<a href="#" class="shadow-xl py-1 px-7">${v}</a>`;
+                console.log(v);
+              })}
+            </div>
+        </div>
+    </div>
+
+    
+  </div>
+</div>
+
+
+        `;
+
+    const dark1 = document.getElementById("dark1");
+    dark1.addEventListener("input", (e) => {
+      document.documentElement.classList.toggle("dark1");
+    });
+  </script>
+</html>

@@ -20,7 +20,7 @@
         <div
           class="flex flex-wrap items-center h-[80px] mb-12 justify-between mx-auto container p-4"
         >
-          <a href="https://flowbite.com/" class="flex items-center">
+          <a href="" class="flex items-center">
             <span
               class="self-center text-2xl font-extrabold whitespace-nowrap dark:text-white"
               >Where in the world?</span
@@ -95,13 +95,22 @@
                   ></path>
                 </svg>
               </div>
-              <input
-                type="search"
-                id="default-search"
-                class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Search for a country…"
-                required
-              />
+
+              <div class="flex items-center gap-2">
+                <input
+                  type="search"
+                  id="default-search"
+                  class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="Search for a country…"
+                  required
+                />
+                <select
+                  id="search-by"
+                  class="h-[56px] w[200px] py-[18px] px-[24px] dark:bg-[#2B3844] dark:text-[white]"
+                >
+                  <option disabled selected>Search by:</option>
+                </select>
+              </div>
             </div>
           </form>
           <select

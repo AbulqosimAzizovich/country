@@ -1,5 +1,4 @@
-const davlat = [
-
+const davlatlar = [
   {
     name: "Afghanistan",
     topLevelDomain: [".af"],
@@ -16789,6 +16788,6 @@ const davlat = [
     ],
     cioc: "ZIM",
     independent: true,
-  }
+  },
 ];
 
