@@ -17,39 +17,16 @@
             <div class="container mx-auto px-5">
                 <nav class="h-[80px] flex justify-between items-center">
                     <a href="#" class="logo text-2xl font-extrabold dark:text-white">Where in the world?</a>
-                    <div class="mode dark:text-white flex items-center gap-1">
-
-                        <label for="checkbox" class="toggler" id="dark">
-                            <input type="checkbox" id="checkbox" />
-                            <span class="ball"></span>
-                            <i class='bx bx-sun sun'></i>
-                            <i class="bx bx-moon moon"></i>
-                        </label>
+                    <div class="mode dark:text-white">
+                        <input type="checkbox">
                         <span>Dark Mode</span>
                     </div>
                 </nav>
             </div>
         </header>
-        <main>
-
-            <section id="filters" class="my-12">
-                <div class="container mx-auto px-5">
-                    <div class="flex items-start  md:justify-between md:items-center flex-col md:flex-row">
-
-                        <input id="search" type="search" placeholder="Search for a country…" class="shadow dark:bg-[#2B3844] dark:text-white h-[56px] mb-[40px] md:mb-0 w-full md:w-[480px] p-[18px]">
-
-                        <select id="region" class="h-[56px] w-[200px] px-[24px] py-[18px] dark:bg-[#2B3844]  dark:text-white">
-                            <option disabled selected>Filter by Region</option>
-                        </select>
-                    </div>
-                </div>
-            </section>
-
-
-            <section id="countries">
-                <div class="container mx-auto px-5">
-                    <div id="wrapper" class="grid grid-cols-1  justify-items-center   md:grid-cols-2 lg:grid-cols-4 gap-[73px]"></div>
-                </div>
+        <main class="mt-20">
+            <section id="wrapper">
+                
             </section>
         </main>
 
@@ -133,5 +110,5 @@
     <!-- utils js -->
     <script src="./utils/utils.js"></script>
     <!-- main js -->
-    <script src="./script.js"></script>
+    <script src="./data.js"></script>
 </html>
